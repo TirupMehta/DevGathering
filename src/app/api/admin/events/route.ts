@@ -206,7 +206,7 @@ export async function PATCH(request: NextRequest) {
             // Notify subscribers
             let notifiedCount = 0;
             if (result.event) {
-                const event = result.event as { name: string; city: string; event_date: string };
+                const event = result.event as unknown as { name: string; city: string; event_date: string };
                 const notifyResult = await notifySubscribersAboutEvent(
                     event.name,
                     slug,

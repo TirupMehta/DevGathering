@@ -68,7 +68,16 @@ export type LogEvent =
     | 'event_creation_failed'
     | 'rate_limited'
     | 'validation_failed'
-    | 'error';
+    | 'error'
+    | 'subscribers_notified'
+    | 'event_published'
+    | 'event_updated'
+    | 'event_deleted'
+    | 'rsvp_invitation_sent'
+    | 'rsvp_approved'
+    | 'rsvp_rejected'
+    | 'rsvp_invitation_resent'
+    | 'rsvp_submitted';
 
 interface LogEntry {
     event: LogEvent;
