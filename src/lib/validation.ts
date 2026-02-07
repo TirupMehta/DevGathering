@@ -20,10 +20,10 @@ export type Role = z.infer<typeof RoleEnum>;
 // Email validation with strict pattern
 export const emailSchema = z
     .string()
-    .email('Please enter a valid email address')
-    .max(254, 'Email must be less than 254 characters')
+    .trim()
     .toLowerCase()
-    .trim();
+    .email('Please enter a valid email address')
+    .max(254, 'Email must be less than 254 characters');
 
 // Name validation
 export const nameSchema = z
@@ -67,7 +67,6 @@ export const eventSlugSchema = z
     .string()
     .min(3, 'Slug must be at least 3 characters')
     .max(50, 'Slug must be less than 50 characters')
-    .toLowerCase()
     .trim()
     .refine(
         (val) => slugRegex.test(val),
