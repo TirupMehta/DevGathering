@@ -587,8 +587,8 @@ textarea.input {
 }
 
 .command-input {
-  padding-left: 48px !important;
-  padding-right: 80px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   background: rgba(17, 17, 17, 0.8) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(8px);
