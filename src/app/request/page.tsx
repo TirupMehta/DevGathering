@@ -19,8 +19,8 @@ export default function RequestPage() {
                         <p className="text-xs text-accent mb-3">Get Involved</p>
                         <h1 className="mb-4">Request Your City</h1>
                         <p className="text-muted" style={{ maxWidth: 550 }}>
-                            Want DevGathering in your area? Tell us where you are and what you'd like to see.
-                            We're expanding city by city, and your request helps us prioritize.
+                            Want DevGathering in your area? Tell us where you are and what you&apos;d like to see.
+                            We&apos;re expanding city by city, and your request helps us prioritize.
                         </p>
                     </div>
                 </div>

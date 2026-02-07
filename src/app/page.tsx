@@ -136,7 +136,7 @@ export default function HomePage() {
               <div className="card">
                 <div className="feature-num">Step 2</div>
                 <h3 className="feature-title">Get invited</h3>
-                <p className="feature-desc">When we launch in your city, you'll be the first to know. Early members get priority access to events.</p>
+                <p className="feature-desc">When we launch in your city, you&apos;ll be the first to know. Early members get priority access to events.</p>
               </div>
               <div className="card">
                 <div className="feature-num">Step 3</div>
