@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main, mvp/initial]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+
+      - name: Run unit tests
+        run: npm test --passWithNoTests
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Build production bundle
+        run: npm run build
+        env:
+          # Dummy values for build (not used at runtime)
+          ADMIN_PASSWORD_HASH: $2b$12$dummyhashforcibuildonlynotreal
+          ADMIN_EMAIL: ci@example.com
+          IP_HASH_SALT: ci-build-salt
+          QR_SECRET: ci-build-secret
+
+      - name: Check bundle for secrets
+        run: |
+          echo "Checking for exposed secrets in build..."
+          if grep -r "SUPABASE_SERVICE_ROLE_KEY\|service_role\|sk_live" .next/static 2>/dev/null; then
+            echo "ERROR: Secrets found in client bundle!"
+            exit 1
+          fi
+          echo "No secrets found in client bundle ✓"
