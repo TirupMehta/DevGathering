@@ -164,7 +164,7 @@ export async function sendAdminNotification(
         );
 
         await client.emails.send({
-            from: fromEmail,
+            from: `Team DevGathering <${fromEmail}>`,
             to: adminEmail,
             subject,
             html: htmlContent,
@@ -231,7 +231,7 @@ export async function sendUserAcknowledgment(
         );
 
         await client.emails.send({
-            from: fromEmail,
+            from: `Team DevGathering <${fromEmail}>`,
             to: email,
             subject,
             html: htmlContent,
@@ -316,7 +316,7 @@ export async function notifySubscribersAboutEvent(
         for (const email of emails) {
             try {
                 await client.emails.send({
-                    from: fromEmail,
+                    from: `Team DevGathering <${fromEmail}>`,
                     to: email,
                     subject: `New Event in ${eventCity}: ${eventName}`,
                     html: htmlContent,
@@ -403,7 +403,7 @@ export async function sendRSVPInvitation(
         );
 
         await client.emails.send({
-            from: fromEmail,
+            from: `Team DevGathering <${fromEmail}>`,
             to: rsvp.email,
             subject: `You're confirmed for ${event.name}!`,
             html: htmlContent,
