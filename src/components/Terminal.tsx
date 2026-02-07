@@ -23,6 +23,8 @@ export default function Terminal() {
     const [visibleLines, setVisibleLines] = useState<number>(0);
 
     useEffect(() => {
+        if (visibleLines !== 0) return;
+
         const timers: NodeJS.Timeout[] = [];
 
         commands.forEach((cmd, index) => {
@@ -35,17 +37,11 @@ export default function Terminal() {
         // Loop the animation
         const loopTimer = setTimeout(() => {
             setVisibleLines(0);
-            // Restart animation
-            setTimeout(() => {
-                commands.forEach((cmd, index) => {
-                    setTimeout(() => setVisibleLines(index + 1), cmd.delay);
-                });
-            }, 500);
         }, 7000);
         timers.push(loopTimer);
 
         return () => timers.forEach(t => clearTimeout(t));
-    }, [visibleLines === 0]);
+    }, [visibleLines]);
 
     return (
         <div className="terminal">

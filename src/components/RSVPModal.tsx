@@ -111,7 +111,7 @@ export default function RSVPModal({ eventId, eventSlug, eventName, isOpen, onClo
                         </div>
                         <h3 className="mb-3">RSVP Submitted!</h3>
                         <p className="text-muted mb-5">
-                            We've received your request. You'll receive a confirmation email once your RSVP is approved.
+                            We&apos;ve received your request. You&apos;ll receive a confirmation email once your RSVP is approved.
                         </p>
                         <button className="btn btn-primary" onClick={handleClose}>
                             Close
@@ -197,7 +197,7 @@ export default function RSVPModal({ eventId, eventSlug, eventName, isOpen, onClo
                                     value={form.message}
                                     onChange={(e) => setForm(f => ({ ...f, message: e.target.value }))}
                                     className="input"
-                                    placeholder="Anything you'd like us to know..."
+                                    placeholder="Anything you&apos;d like us to know..."
                                     rows={3}
                                 />
                             </div>

@@ -20,11 +20,7 @@ const usedTokens = new Set<string>();
 // Cleanup old tokens periodically (tokens older than 24 hours)
 const TOKEN_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours
 
-interface TokenPayload {
-    eventId: string;
-    userId: string;
-    issuedAt: number;
-}
+// TokenPayload interface removed (unused)
 
 // Generate QR token
 export function generateQRToken(eventId: string, userId: string): string {

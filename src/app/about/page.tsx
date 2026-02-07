@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import Link from "next/link";
+// Link import removed
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import NotifyForm from "@/components/NotifyForm";
 
 export const metadata: Metadata = {
     title: "About — DevGathering",
-    description: "We're building the anti-conference. No sales pitches, just engineering.",
+    description: "We&apos;re building the anti-conference. No sales pitches, just engineering.",
 };
 
 const manifesto = [
@@ -32,7 +32,7 @@ const manifesto = [
     },
     {
         title: "Community Over Profit",
-        desc: "We aren't optimizing for ticket sales. We're optimizing for connection. We keep events small enough to actually meet people.",
+        desc: "We aren't optimizing for ticket sales. We&apos;re optimizing for connection. We keep events small enough to actually meet people.",
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -145,7 +145,7 @@ export default function AboutPage() {
                         <div className="text-center" style={{ maxWidth: 500, margin: "0 auto" }}>
                             <h2 className="mb-4">Join the movement</h2>
                             <p className="text-muted mb-6">
-                                We're just getting started. Be part of the first wave of events in your city.
+                                We&apos;re just getting started. Be part of the first wave of events in your city.
                             </p>
                             <NotifyForm />
                         </div>

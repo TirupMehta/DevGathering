@@ -82,7 +82,7 @@ export default function HomePage() {
               By devs, <span className="text-accent">for devs</span>
             </h2>
             <p className="text-muted mb-7" style={{ maxWidth: 600, margin: "0 auto 48px" }}>
-              We're building the kind of events we always wanted to attend.
+              We&apos;re building the kind of events we always wanted to attend.
               Technical, genuine, and focused on what matters most—great engineering.
             </p>
 
@@ -154,7 +154,7 @@ export default function HomePage() {
               <h2 className="mb-4">We&apos;re just getting started</h2>
               <p className="text-muted" style={{ maxWidth: 480, margin: "0 auto 32px" }}>
                 Be the first to know when we launch in your city.
-                Join our waitlist and help us build the developer community you've always wanted.
+                Join our waitlist and help us build the developer community you&apos;ve always wanted.
               </p>
               <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
                 <Link href="/request" className="btn btn-primary">

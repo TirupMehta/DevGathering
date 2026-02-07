@@ -59,7 +59,7 @@ export default function EventsPage() {
                         <p className="text-muted" style={{ maxWidth: 600 }}>
                             {events.length > 0
                                 ? "Check out our upcoming events and RSVP to secure your spot."
-                                : "We're preparing our first wave of events. Join the waitlist to be the first to know when we launch in your area."
+                                : "We&apos;re preparing our first wave of events. Join the waitlist to be the first to know when we launch in your area."
                             }
                         </p>
                     </div>
@@ -109,8 +109,8 @@ export default function EventsPage() {
                                     <p className="text-xs text-accent mb-4">Coming Soon</p>
                                     <h2 className="mb-4">No events yet</h2>
                                     <p className="text-muted mb-6" style={{ maxWidth: 450, margin: "0 auto 32px" }}>
-                                        We're working behind the scenes to bring the first DevGathering events to life.
-                                        Great things take time, and we're making sure our first events set the standard.
+                                        We&apos;re working behind the scenes to bring the first DevGathering events to life.
+                                        Great things take time, and we&apos;re making sure our first events set the standard.
                                     </p>
                                     <div style={{ maxWidth: 450, margin: "0 auto" }}>
                                         <NotifyForm />
@@ -152,9 +152,9 @@ export default function EventsPage() {
 
                         {/* Upcoming Topics */}
                         <div className="card text-center" style={{ padding: "48px 32px" }}>
-                            <h3 className="mb-4">Topics we're planning</h3>
+                            <h3 className="mb-4">Topics we&apos;re planning</h3>
                             <p className="text-muted mb-5">
-                                Here's a sneak peek at the kind of topics our first events will cover:
+                                Here&apos;s a sneak peek at the kind of topics our first events will cover:
                             </p>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
                                 {upcomingTopics.map((topic, i) => (
