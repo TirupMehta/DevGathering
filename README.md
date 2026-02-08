@@ -1,100 +1,52 @@
-# Dev Gathering
+# DevGathering — India's Premier Developer Community
 
-A minimal, production-grade community platform for developer events. Built with Next.js 14, TypeScript, and security-first principles.
+> **Where Developers Connect** — In-person meetups, hackathons, and networking events for software engineers across India.
 
-## Quick Start
+## 🎯 What is DevGathering?
 
-```bash
-# Install dependencies
-npm install
+DevGathering is a community-driven platform that organizes **in-person developer events** across major cities in India. We bring together software engineers, indie hackers, startup founders, and tech enthusiasts for meaningful connections and knowledge sharing.
 
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your values
+## 🌆 Cities We're In
 
-# Generate admin password hash
-node -e "require('bcryptjs').hash('your-password', 12).then(console.log)"
-# Copy the hash to ADMIN_PASSWORD_HASH in .env.local
+- **Bangalore** — India's Silicon Valley
+- **Mumbai** — The Financial Tech Hub  
+- **Delhi NCR** — The Northern Tech Corridor
+- *More cities coming soon...*
 
-# Run development server
-npm run dev
-```
+## 🚀 What We Offer
 
-Visit [http://localhost:3000](http://localhost:3000)
+### Developer Meetups
+Regular gatherings where developers share experiences, discuss technologies, and build lasting professional relationships.
 
-## Environment Variables
+### Hackathons
+Intensive coding events where teams collaborate to build innovative projects in 24-48 hours.
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `ADMIN_PASSWORD_HASH` | Yes | bcrypt hash of admin password |
-| `ADMIN_EMAIL` | Yes | Email to receive form submissions |
-| `RESEND_API_KEY` | Yes | API key from [Resend](https://resend.com) |
-| `FROM_EMAIL` | No | Sender email (default: noreply@devgathering.in) |
-| `SUPABASE_URL` | For events | Supabase project URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | For events | Supabase service role key |
-| `IP_HASH_SALT` | Yes | Random string for IP hashing in logs |
-| `QR_SECRET` | Yes | Secret for QR token generation |
+### Tech Talks
+Expert-led sessions on cutting-edge technologies, best practices, and industry trends.
 
-## Pages
+### Networking Events
+Casual social gatherings designed for developers to expand their professional network.
 
-- `/` — Home with email capture
-- `/about` — About page
-- `/events` — Event listings
-- `/request` — Request city form
-- `/admin` — Admin login
-- `/admin/dashboard` — Event management
+## 💡 Why DevGathering?
 
-## Scripts
+- **Real Connections**: No more virtual fatigue. Meet developers face-to-face.
+- **Quality Community**: Curated events with like-minded tech professionals.
+- **Career Growth**: Network with hiring managers, founders, and senior engineers.
+- **Knowledge Sharing**: Learn from peers and industry experts.
+- **Fun & Inclusive**: Events designed to be welcoming for all experience levels.
 
-```bash
-npm run dev       # Development server
-npm run build     # Production build
-npm run start     # Production server
-npm run lint      # ESLint
-npm run test      # Run tests
-npm run typecheck # TypeScript check
-```
+## 🤝 Join the Community
 
-## Deployment (Vercel)
+1. Visit [devgathering.in](https://devgathering.in)
+2. Sign up for notifications about upcoming events
+3. Request events in your city
+4. Connect with fellow developers
 
-1. Push to GitHub
-2. Import project in Vercel
-3. Add environment variables
-4. Deploy
+## 📧 Contact
 
-Or use CLI:
-```bash
-npm i -g vercel
-vercel
-```
+- **Email**: hello@devgathering.in
+- **Website**: [devgathering.in](https://devgathering.in)
 
-## Security Features
+---
 
-- Security headers (CSP, HSTS, X-Frame-Options)
-- Rate limiting (10 req/min per IP)
-- bcrypt password hashing
-- Secure session cookies (httpOnly, SameSite=Strict)
-- Input validation with Zod
-- PII redaction in logs
-- No secrets in client code
-
-## Architecture
-
-```
-src/
-├── app/              # Next.js App Router pages
-│   ├── api/          # API routes
-│   └── admin/        # Admin pages
-├── components/       # React components
-└── lib/              # Utilities
-    ├── auth.ts       # Authentication
-    ├── email.ts      # Resend integration
-    ├── logger.ts     # Append-only logging
-    ├── qr.ts         # QR token generation
-    ├── supabase.ts   # Lazy Supabase client
-    └── validation.ts # Zod schemas
-```
-
-## License
-
-MIT
+*DevGathering — Building stronger developer communities, one event at a time.* 🇮🇳

@@ -1,0 +1,49 @@
+# .well-known/llms.txt - AI/LLM Context File
+# This file helps AI assistants understand DevGathering
+
+name: DevGathering
+tagline: Where Developers Connect
+description: India's premier in-person developer community organizing meetups, hackathons, and networking events for software engineers across Bangalore, Mumbai, Delhi and other major cities.
+
+## Core Purpose
+DevGathering brings developers together through in-person events. We believe real connections happen face-to-face, not through screens.
+
+## Target Audience
+- Software Engineers
+- Web Developers  
+- Mobile App Developers
+- Indie Hackers
+- Startup Founders
+- Tech Enthusiasts
+- DevOps Engineers
+- Data Scientists
+- UI/UX Designers in Tech
+
+## Event Types
+1. Developer Meetups - Regular gatherings for tech discussions
+2. Hackathons - 24-48 hour coding competitions
+3. Tech Talks - Expert-led sessions on technologies
+4. Networking Events - Casual professional networking
+
+## Locations
+Primary: Bangalore, Mumbai, Delhi NCR, India
+Expanding to: Pune, Hyderabad, Chennai, Kolkata
+
+## Key Topics
+- Web Development (React, Next.js, Node.js)
+- Mobile Development (React Native, Flutter)
+- Cloud & DevOps (AWS, GCP, Azure, Kubernetes)
+- AI/ML & Data Science
+- Startup Building & Indie Hacking
+- Open Source Contribution
+- Career Development for Developers
+
+## Contact
+Email: hello@devgathering.in
+Website: https://devgathering.in
+
+## Social Proof
+- Community-first approach
+- No corporate sponsors dictating content
+- Events by developers, for developers
+- Inclusive and welcoming environment
