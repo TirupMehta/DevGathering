@@ -119,12 +119,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
       {/* 
         Nice! You're inspecting the source 👀
         You're definitely one of us.
@@ -135,6 +129,10 @@ export default function RootLayout({
       */}
       <SmoothScroll />
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ToastProvider>
           {children}
           <EasterEggs />
