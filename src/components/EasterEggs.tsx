@@ -8,9 +8,24 @@ const SECRET_CODE = [
     "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight"
 ];
 
+const CONFETTI_COLORS = ["#ff6b35", "#ffaa66", "#fff", "#22c55e", "#3b82f6", "#a855f7"];
+
+// Pre-generate confetti particle data at module load time (avoids hook purity issues)
+const CONFETTI_PARTICLES = Array.from({ length: 100 }, () => ({
+    left: `${Math.random() * 100}%`,
+    width: `${Math.random() * 10 + 5}px`,
+    height: `${Math.random() * 10 + 5}px`,
+    background: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+    borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+    animationDuration: `${Math.random() * 2 + 2}s`,
+    animationDelay: `${Math.random() * 0.5}s`,
+    rotation: `rotate(${Math.random() * 360}deg)`,
+}));
+
 export default function EasterEggs() {
     const [, setInputSequence] = useState<string[]>([]);
     const [showConfetti, setShowConfetti] = useState(false);
+
 
     useEffect(() => {
         // Console easter egg
@@ -78,20 +93,20 @@ export default function EasterEggs() {
             }}
         >
             {/* Confetti particles */}
-            {Array.from({ length: 100 }).map((_, i) => (
+            {CONFETTI_PARTICLES.map((particle, i) => (
                 <div
                     key={i}
                     style={{
                         position: "absolute",
-                        left: `${Math.random() * 100}%`,
+                        left: particle.left,
                         top: "-20px",
-                        width: `${Math.random() * 10 + 5}px`,
-                        height: `${Math.random() * 10 + 5}px`,
-                        background: ["#ff6b35", "#ffaa66", "#fff", "#22c55e", "#3b82f6", "#a855f7"][Math.floor(Math.random() * 6)],
-                        borderRadius: Math.random() > 0.5 ? "50%" : "2px",
-                        animation: `confetti-fall ${Math.random() * 2 + 2}s linear forwards`,
-                        animationDelay: `${Math.random() * 0.5}s`,
-                        transform: `rotate(${Math.random() * 360}deg)`,
+                        width: particle.width,
+                        height: particle.height,
+                        background: particle.background,
+                        borderRadius: particle.borderRadius,
+                        animation: `confetti-fall ${particle.animationDuration} linear forwards`,
+                        animationDelay: particle.animationDelay,
+                        transform: particle.rotation,
                     }}
                 />
             ))}

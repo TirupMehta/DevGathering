@@ -51,7 +51,7 @@ export default function PrivacyPage() {
                         <h1 className="mb-4">Privacy Policy</h1>
                         <p className="text-muted" style={{ maxWidth: 660, fontSize: "1.2rem", lineHeight: "1.6" }}>
                             We believe privacy policies should be readable.<br />
-                            Here's ours, in plain English.
+                            Here&apos;s ours, in plain English.
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
                                         At DevGathering, we believe that <span style={{ color: "var(--text)" }}>privacy is a fundamental right</span>, not a marketing checkbox.
                                     </p>
                                     <p>
-                                        We use simple, anonymized analytics to understand how people use our site—but we don't track individuals or build profiles. Our analytics tell us things like "100 people visited today" without knowing who they were.
+                                        We use simple, anonymized analytics to understand how people use our site—but we don&apos;t track individuals or build profiles. Our analytics tell us things like &quot;100 people visited today&quot; without knowing who they were.
                                     </p>
                                 </div>
                             </div>
@@ -113,10 +113,10 @@ export default function PrivacyPage() {
                         <div className="card text-center mb-8" style={{ padding: "48px 32px", background: "linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)" }}>
                             <h2 className="mb-4">Your Data, Your Control</h2>
                             <p className="text-muted mb-6" style={{ maxWidth: 500, margin: "0 auto 24px" }}>
-                                If you've signed up for updates or requested a city, your information is stored securely. You have the right to access, modify, or delete your data at any time.
+                                If you&apos;ve signed up for updates or requested a city, your information is stored securely. You have the right to access, modify, or delete your data at any time.
                             </p>
                             <p style={{ color: "var(--text)" }}>
-                                Simply email us at <a href="mailto:hello@devgathering.in" style={{ color: "var(--accent)", textDecoration: "underline" }}>hello@devgathering.in</a> and we'll take care of it.
+                                Simply email us at <a href="mailto:hello@devgathering.in" style={{ color: "var(--accent)", textDecoration: "underline" }}>hello@devgathering.in</a> and we&apos;ll take care of it.
                             </p>
                         </div>
 

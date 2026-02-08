@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 export default function NotifyForm() {
     const [email, setEmail] = useState("");

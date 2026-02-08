@@ -85,7 +85,7 @@ export default function TermsPage() {
 
                                 <div style={{ color: "var(--text-muted)", fontSize: "1.125rem", lineHeight: "1.8", display: "flex", flexDirection: "column", gap: "24px", position: "relative", zIndex: 10 }}>
                                     <p>
-                                        By using DevGathering, you agree to these terms. They're designed to be <span style={{ color: "var(--text)" }}>fair, straightforward, and developer-friendly</span>.
+                                        By using DevGathering, you agree to these terms. They&apos;re designed to be <span style={{ color: "var(--text)" }}>fair, straightforward, and developer-friendly</span>.
                                     </p>
                                     <p>
                                         Our platform exists to connect developers. We expect everyone to contribute positively to the community, whether online or at in-person events.

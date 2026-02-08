@@ -48,7 +48,7 @@ export default function DevPage() {
                             marginBottom: "16px",
                             fontSize: "14px"
                         }}>
-                            // You weren&apos;t supposed to find this...
+                            {`// You weren't supposed to find this...`}
                         </code>
                         <h1 style={{ fontSize: "2.5rem", marginBottom: "16px" }}>/dev</h1>
                         <p style={{ color: "var(--text-muted)" }}>
