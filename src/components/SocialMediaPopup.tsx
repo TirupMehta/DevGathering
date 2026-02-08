@@ -22,22 +22,33 @@ export default function SocialMediaPopup() {
         // Don't show if social links are configured or if dismissed
         if (hasSocialLinks) return;
 
-        // Check if user has dismissed this popup before (session storage)
-        const dismissed = sessionStorage.getItem("social-popup-dismissed");
+        // Check if user has seen this popup before (localStorage = permanent)
+        const dismissed = localStorage.getItem("social-popup-dismissed");
         if (dismissed) {
             setIsDismissed(true);
             return;
         }
 
         // Show popup after a short delay
-        const timer = setTimeout(() => setIsVisible(true), 2000);
-        return () => clearTimeout(timer);
+        const showTimer = setTimeout(() => setIsVisible(true), 2000);
+
+        // Auto-dismiss after 10 seconds (2s delay + 10s visible = 12s total)
+        const autoDismissTimer = setTimeout(() => {
+            setIsVisible(false);
+            setIsDismissed(true);
+            localStorage.setItem("social-popup-dismissed", "true");
+        }, 12000);
+
+        return () => {
+            clearTimeout(showTimer);
+            clearTimeout(autoDismissTimer);
+        };
     }, []);
 
     const handleDismiss = () => {
         setIsVisible(false);
         setIsDismissed(true);
-        sessionStorage.setItem("social-popup-dismissed", "true");
+        localStorage.setItem("social-popup-dismissed", "true");
     };
 
     // Don't render anything if social links exist or popup was dismissed
