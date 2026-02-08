@@ -16,18 +16,15 @@ const hasSocialLinks = Object.values(SOCIAL_LINKS).some(link => link.trim() !== 
 
 export default function SocialMediaPopup() {
     const [isVisible, setIsVisible] = useState(false);
-    const [isDismissed, setIsDismissed] = useState(false);
+    // Initialize isDismissed from localStorage
+    const [isDismissed, setIsDismissed] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return localStorage.getItem("social-popup-dismissed") === "true";
+    });
 
     useEffect(() => {
-        // Don't show if social links are configured or if dismissed
-        if (hasSocialLinks) return;
-
-        // Check if user has seen this popup before (localStorage = permanent)
-        const dismissed = localStorage.getItem("social-popup-dismissed");
-        if (dismissed) {
-            setIsDismissed(true);
-            return;
-        }
+        // Don't show if social links are configured or already dismissed
+        if (hasSocialLinks || isDismissed) return;
 
         // Show popup after a short delay
         const showTimer = setTimeout(() => setIsVisible(true), 2000);
@@ -43,7 +40,7 @@ export default function SocialMediaPopup() {
             clearTimeout(showTimer);
             clearTimeout(autoDismissTimer);
         };
-    }, []);
+    }, [isDismissed]);
 
     const handleDismiss = () => {
         setIsVisible(false);
@@ -136,19 +133,6 @@ export default function SocialMediaPopup() {
                     </button>
                 </div>
             </div>
-
-            <style jsx>{`
-                @keyframes slideInLeft {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-            `}</style>
         </div>
     );
 }

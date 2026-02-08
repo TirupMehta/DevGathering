@@ -9,7 +9,7 @@ const SECRET_CODE = [
 ];
 
 export default function EasterEggs() {
-    const [inputSequence, setInputSequence] = useState<string[]>([]);
+    const [, setInputSequence] = useState<string[]>([]);
     const [showConfetti, setShowConfetti] = useState(false);
 
     useEffect(() => {
@@ -32,6 +32,14 @@ export default function EasterEggs() {
             `,
             "color: #ff6b35; font-family: monospace; font-size: 12px;"
         );
+
+        const triggerEasterEgg = () => {
+            setShowConfetti(true);
+            console.log("%c🎉 You found the easter egg! You're officially a DevGathering insider.", "color: #ff6b35; font-size: 16px; font-weight: bold;");
+
+            // Hide confetti after animation
+            setTimeout(() => setShowConfetti(false), 4000);
+        };
 
         const handleKeyDown = (e: KeyboardEvent) => {
             // Ignore if user is typing in an input
@@ -56,14 +64,6 @@ export default function EasterEggs() {
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, []);
-
-    const triggerEasterEgg = () => {
-        setShowConfetti(true);
-        console.log("%c🎉 You found the easter egg! You're officially a DevGathering insider.", "color: #ff6b35; font-size: 16px; font-weight: bold;");
-
-        // Hide confetti after animation
-        setTimeout(() => setShowConfetti(false), 4000);
-    };
 
     if (!showConfetti) return null;
 
@@ -133,28 +133,7 @@ export default function EasterEggs() {
                 </code>
             </div>
 
-            <style jsx>{`
-                @keyframes confetti-fall {
-                    0% {
-                        transform: translateY(0) rotate(0deg);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translateY(100vh) rotate(720deg);
-                        opacity: 0;
-                    }
-                }
-                @keyframes popup-in {
-                    from {
-                        opacity: 0;
-                        transform: translate(-50%, -50%) scale(0.8);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translate(-50%, -50%) scale(1);
-                    }
-                }
-            `}</style>
+
         </div>
     );
 }
